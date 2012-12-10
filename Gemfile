@@ -5,7 +5,20 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'carrierwave'
+gem 'fog'
+gem 'jquery-rails'
+gem 'pg'
+gem 'rmagick'
+gem 'bcrypt-ruby'
+gem 'annotate'
+gem 'rails-footnotes'
+gem 'ipsum'
+gem 'kaminari'
+gem 'pry-rails'
+gem 'aws-ses'
+gem 'geocoder'
+gem 'httparty'
 
 
 # Gems used only for assets and not required
@@ -16,7 +29,8 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
+  gem 'compass-rails'
+  gem 'zurb-foundation'
   gem 'uglifier', '>= 1.0.3'
 end
 

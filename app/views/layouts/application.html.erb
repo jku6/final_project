@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PortfolioFinalRails</title>
+  <title>Biz-Shout</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{GOOGLEKEY}&sensor=false" %>
+
+  
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= yield(:name) if yield %>">
 
-<%= yield %>
+<div id="container">
+
+    <header>
+      
+    </header>
+
+    <nav class="top-bar">
+      <ul>
+        <li class="name"><h1><a href="/">Biz-Shout</a></h1></li>
+        <li class="toggle-topbar"><a href="#"></a></li>
+      </ul>
+        <section>
+          <ul class="left">
+            <li><%= dynamic_dashboard_links %></li>
+            <li><%=  %></li>
+          </ul>
+
+          
+        </section>
+    </nav>
+
+    <%= yield %>
+    
+    <footer>
+
+    </footer>
+
+  </div><!-- end container -->
 
 </body>
 </html>
