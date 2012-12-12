@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def dynamic_login_links
+    def dynamic_login_links
         if @auth
             link_to "Logout", logout_path
         else
@@ -7,11 +7,17 @@ module ApplicationHelper
         end
     end
 
+    
+
 
     def dynamic_dashboard_links
         if @auth
             link_to "Logged in as #{@auth.username}", dashboard_index_path
         else
         end
+    end
+
+    def javascript(*args)
+        content_for(:head) { javascript_include_tag(*args) }
     end
 end

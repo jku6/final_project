@@ -1,0 +1,5 @@
+
+
+$('#markers').empty();
+
+$('#markers').append("<%=j render :partial => 'maps', :locals => {:companies => @companies} %>");

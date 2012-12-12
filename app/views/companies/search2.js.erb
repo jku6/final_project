@@ -1,0 +1,5 @@
+
+
+$('.allitems').empty();
+
+$('.allitems').append("<%=j render :partial => 'companies', :locals => {:companies => @companies} %>");

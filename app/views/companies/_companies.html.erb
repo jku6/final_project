@@ -1,11 +1,3 @@
-<div class="top"></div>
-
-
-
-
-<%= render 'search2' %>
-<div class="allitems">
-
 <h1>Company Index List</h1>
 
   <% @companies.each do |company| %>
@@ -30,10 +22,3 @@
     <%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Edit', edit_company_path(company) %>
 <% end %>
-
-<%= paginate @companies %>
-
-</div>
-
-
-

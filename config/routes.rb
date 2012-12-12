@@ -3,6 +3,9 @@ PortfolioFinalRails::Application.routes.draw do
   resources :users
   resources :companies
   resources :dashboard
+  match '/maps' => 'companies#map', :via => :get
+  match '/maps/search' => 'companies#search', :via => :post
+  match '/companies/search' => 'companies#search2', :via => :post
   
   match '/maps' => 'companies#create', :via => :post
 

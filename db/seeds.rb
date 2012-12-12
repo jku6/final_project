@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Company.all.each do |company|
+  puts company.address
+  begin
+    place = Geocoder.search(company.address + " New York, NY ")  
+    company.lat = place[0].data["geometry"]["location"]["lat"]
+    company.long = place[0].data["geometry"]["location"]["lng"]
+    company.save
+  rescue
+  end
+end
