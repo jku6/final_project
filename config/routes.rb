@@ -1,13 +1,21 @@
 PortfolioFinalRails::Application.routes.draw do
   
+  match '/rate' => 'rater#create', :as => 'rate'
+
   resources :users
-  resources :companies
+  resources :companies 
+
   resources :dashboard
   match '/maps' => 'companies#map', :via => :get
   match '/maps/search' => 'companies#search', :via => :post
   match '/companies/search' => 'companies#search2', :via => :post
+
+  match '/login' => 'session#new', :via => :get
+  match '/logout' => 'session#destroy', :via => :get
+  match '/session' => 'session#create', :via => :post
   
   match '/maps' => 'companies#create', :via => :post
+  # map.resources :companies, :member => {:rate => :post}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

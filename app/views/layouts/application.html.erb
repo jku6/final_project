@@ -9,6 +9,7 @@
 
   
   <%= csrf_meta_tags %>
+
 </head>
 <body class="<%= yield(:name) if yield %>">
 
@@ -36,9 +37,10 @@
                 </ul>
 
             </li>
-            
-            <li><%= dynamic_dashboard_links %></li>
             <li><%= link_to "Map", maps_path %></li>
+            <li><%= dynamic_dashboard_links %></li>
+            <li><%= dynamic_login_links %></li>
+            
           
             
           </ul>
@@ -56,6 +58,6 @@
     </footer>
 
   </div><!-- end container -->
-
+<%= javascript_include_tag "alertify.js" %>
 </body>
 </html>

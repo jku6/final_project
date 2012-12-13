@@ -1,0 +1,7 @@
+<h1>Company: <%= @company.name %></h1>
+
+Speed : <%= rating_for @company, "speed" %>
+Price : <%= rating_for @company, "price" %>
+
+<%= link_to 'Edit', edit_company_path %>
+<%= link_to 'Back', companies_path %>

@@ -1,0 +1,16 @@
+<h1>the current user is : <%= @auth.try(:username) %></h1>
+
+Index
+<% @users.each do |user| %>
+  
+    <p><%= user.username %></p>
+    <p><%= user.email %></p>
+    <p><%= user.user_photo %></p>
+    
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+<% end %>
+<br />
+<%= link_to 'New User', new_user_path %>

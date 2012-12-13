@@ -1,1 +1,30 @@
-Dashboard
+
+<% if @auth %>
+  <div><h1>Welcome <%= @auth.username %></h1></div>
+  <%= image_tag @auth.photo %>
+  <%= @auth.email %>
+
+    
+    <div>
+      <%= link_to "Edit your profile", edit_user_path(@auth) %>
+    </div>
+
+
+  
+<% else %> <!-- This is what happens if you are not logged in to a session -->
+  <div>Not logged in</div>
+  <h2>Login</h2>
+      <%= form_tag '/session' do %>
+        <%= label_tag 'Username' %>
+        <%= text_field_tag 'username' %>
+        <%= label_tag 'Password' %>
+        <%= password_field_tag 'password' %>
+        <%= submit_tag 'Login!' %>
+      <% end %>
+
+      <h2>
+        <%= link_to "Register", new_user_path %>
+      </h2>
+
+
+<% end %>

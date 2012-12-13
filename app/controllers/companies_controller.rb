@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
       @companies = Company.page(params[:page])
       
       
+      
     end
 
     def map
@@ -64,6 +65,13 @@ class CompaniesController < ApplicationController
       else
         @companies = Company.all
       end
+    end
+
+
+
+    def show
+      
+      @company = Company.find(params[:id])
     end
 
 

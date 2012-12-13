@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208234709) do
+ActiveRecord::Schema.define(:version => 20121213220756015) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -22,17 +22,22 @@ ActiveRecord::Schema.define(:version => 20121208234709) do
     t.string   "category"
     t.string   "url"
     t.boolean  "hiring"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                                    :null => false
+    t.datetime "updated_at",                                                    :null => false
+    t.decimal  "rating_average", :precision => 6, :scale => 2, :default => 0.0
   end
 
-  create_table "ratings", :force => true do |t|
-    t.integer  "user_id"
-    t.float    "rating"
-    t.integer  "company_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "rating_caches", :force => true do |t|
+    t.integer  "cacheable_id"
+    t.string   "cacheable_type"
+    t.float    "avg",            :null => false
+    t.integer  "qty",            :null => false
+    t.string   "dimension"
+    t.datetime "created_at",     :nullr => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "rating_caches", ["cacheable_id", "cacheable_type"], :name => "index_rating_caches_on_cacheable_id_and_cacheable_type"
 
   create_table "users", :force => true do |t|
     t.string   "username"

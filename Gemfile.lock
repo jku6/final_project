@@ -37,6 +37,10 @@ GEM
       mime-types
       xml-simple
     bcrypt-ruby (3.0.1)
+    better_errors (0.2.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.7.0)
+    binding_of_caller (0.6.8)
     builder (3.0.4)
     carrierwave (0.7.1)
       activemodel (>= 3.2.0)
@@ -97,6 +101,7 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    letsrate (1.0.7)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -185,6 +190,8 @@ DEPENDENCIES
   annotate
   aws-ses
   bcrypt-ruby
+  better_errors
+  binding_of_caller
   carrierwave
   coffee-rails (~> 3.2.1)
   compass-rails
@@ -194,6 +201,7 @@ DEPENDENCIES
   ipsum
   jquery-rails
   kaminari
+  letsrate
   pg
   pry-rails
   rails (= 3.2.9)

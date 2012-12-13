@@ -1,0 +1,14 @@
+      <h2>
+        Login
+      </h2>
+      <%= form_tag '/session' do %>
+        <%= label_tag 'Username' %>
+        <%= text_field_tag 'username' %>
+        <%= label_tag 'Password' %>
+        <%= password_field_tag 'password' %>
+        <%= submit_tag 'Login!' %>
+      <% end %>
+
+      <h2>
+        <%= link_to "Register", new_user_path %>
+      </h2>

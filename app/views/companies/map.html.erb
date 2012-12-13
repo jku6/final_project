@@ -13,7 +13,7 @@
 
 <% @companies.each do |x| %>
     <script>
-        add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.name %>');
+        add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.name %>', '<%= x.url %>', '<%= x.address %>');
     </script>
 <% end %>
 </div>

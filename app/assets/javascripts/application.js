@@ -1,7 +1,9 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require 'jquery.raty.js'
 //= require foundation
 //= require 'google.js'
 //= require 'rating.js'
-//= require 'endless_page.js'
+//= require 'letsrate.js.erb'
+
