@@ -7,18 +7,24 @@ class SessionController < ApplicationController
     end
 
     def create
-        user = User.find_by_username(params[:username])
-        if user && user.authenticate(params[:password])
-            session[:user_id] = user.id
-            redirect_to dashboard_index_path(user)
-        else
-            render :new #this is the new.html.erb page
-        end
+        user = User.from_omniauth(env["omniauth.auth"])
+        session[:user_id] = user.id
+        redirect_to root_url
     end
+
+    # def create
+    #     user = User.find_by_username(params[:username])
+    #     if user && user.authenticate(params[:password])
+    #         session[:user_id] = user.id
+    #         redirect_to dashboard_index_path(user)
+    #     else
+    #         render :new #this is the new.html.erb page
+    #     end
+    # end
 
     def destroy
         session[:user_id] = nil
-        redirect_to login_path
+        redirect_to dashboard_index_path
     end
 end
 

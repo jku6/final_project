@@ -20,6 +20,11 @@ gem 'aws-ses'
 gem 'geocoder'
 gem 'httparty'
 gem 'letsrate'
+gem 'awesome_nested_set'
+gem 'acts_as_commentable_with_threading'
+gem 'omniauth-facebook'
+gem 'activeadmin'
+gem 'foundation-icons-rails'
 # gem 'rake', '10.0.2'
 group :development do
   gem 'better_errors'
@@ -38,6 +43,7 @@ group :assets do
   gem 'compass-rails'
   gem 'zurb-foundation'
   gem 'uglifier', '>= 1.0.3'
+  
 end
 
 gem 'jquery-rails'

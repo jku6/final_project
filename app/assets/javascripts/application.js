@@ -4,6 +4,5 @@
 //= require 'jquery.raty.js'
 //= require foundation
 //= require 'google.js'
-//= require 'rating.js'
 //= require 'letsrate.js.erb'
 

@@ -17,6 +17,17 @@ function display_map(lat, long, zoom)
   canvas = $('#map_canvas')[0];
   map = new google.maps.Map(canvas, mapOptions);
 }
+function display_map2(lat, long, zoom)
+{
+  var mapOptions = {
+    center: new google.maps.LatLng(lat, long),
+    zoom: zoom,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  canvas = $('#self_canvas')[0];
+  map = new google.maps.Map(canvas, mapOptions);
+}
 
 infos = [];
 function add_marker(lat, long, title, url, address)

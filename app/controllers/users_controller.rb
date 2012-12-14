@@ -10,23 +10,21 @@ class UsersController < ApplicationController
       @user = User.new(params[:user])
 
       if @user.save
-
         redirect_to edit_user_path(@user)
-
       else
         render :new
       end
   end
 
-  def login
-        user = User.find_by_username(params[:username])
-        if user && user.authenticate(params[:password])
-            session[:user_id] = user.id
-            redirect_to dashboard_index_path(user)
-        else
-            render :new #this is the new.html.erb page
-        end
-    end
+  # def login
+  #       user = User.find_by_username(params[:username])
+  #       if user && user.authenticate(params[:password])
+  #           session[:user_id] = user.id
+  #           redirect_to dashboard_index_path(user)
+  #       else
+  #           render :new #this is the new.html.erb page
+  #       end
+  #   end
 
   # def show
   #     user_id = params[:id]

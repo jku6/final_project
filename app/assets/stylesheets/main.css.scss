@@ -5,9 +5,14 @@
 
 #map_canvas
  {
-
     width: 600px;
     height: 600px;
+    position:absolute;
+ }
+ #self_canvas
+ {
+    width: 300px;
+    height: 300px;
     position:absolute;
  }
 

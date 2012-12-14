@@ -12,6 +12,14 @@
 
 </head>
 <body class="<%= yield(:name) if yield %>">
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=479466075426075";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div id="container">
 
@@ -38,8 +46,13 @@
 
             </li>
             <li><%= link_to "Map", maps_path %></li>
-            <li><%= dynamic_dashboard_links %></li>
-            <li><%= dynamic_login_links %></li>
+            
+            <% if @auth %>
+            <li>Signed in as <strong><%= @auth.username %></strong>!</li>
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+            <% else %>
+            <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+            <% end %>
             
           
             

@@ -1,5 +1,14 @@
 PortfolioFinalRails::Application.routes.draw do
   
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  match 'auth/:provider/callback', to: 'session#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'session#destroy', as: 'signout'
+
+  
   match '/rate' => 'rater#create', :as => 'rate'
 
   resources :users
@@ -10,11 +19,13 @@ PortfolioFinalRails::Application.routes.draw do
   match '/maps/search' => 'companies#search', :via => :post
   match '/companies/search' => 'companies#search2', :via => :post
 
-  match '/login' => 'session#new', :via => :get
-  match '/logout' => 'session#destroy', :via => :get
-  match '/session' => 'session#create', :via => :post
+  # match '/login' => 'session#new', :via => :get
+  # match '/logout' => 'session#destroy', :via => :get
+  # match '/session' => 'session#create', :via => :post
   
   match '/maps' => 'companies#create', :via => :post
+
+  mount Foundation::Icons::Rails::Engine => '/fi'
   # map.resources :companies, :member => {:rate => :post}
 
   # The priority is based upon order of creation:
