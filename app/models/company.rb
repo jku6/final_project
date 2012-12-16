@@ -21,11 +21,6 @@ class Company < ActiveRecord::Base
   letsrate_rateable "speed", "performance", "price", "customer_service"
 
   has_many :mycomments
-
-  is_commentable
-  is_voteable
-  is_rateable
-  is_favoriteable
   
   def self.text_search(query)
       self.where("name @@ :q or address @@ :q or category @@ :q or url @@ :q", :q => query)

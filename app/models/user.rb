@@ -23,9 +23,6 @@ class User < ActiveRecord::Base
 
   letsrate_rater
 
-  has_reputation
-  is_social
-  is_friendable
 
   # mount_uploader :photo, ImageUploader
   # validates :username, :presence => true
