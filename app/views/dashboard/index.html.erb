@@ -1,7 +1,7 @@
 
 <% if @auth %>
   <div><h1>Welcome <%= @auth.username %></h1></div>
-  <%= image_tag @auth.photo %>
+  <div class="mainphoto"><%= image_tag @auth.photo %></div>
   <%= @auth.email %>
 
     <span class="glyph general">l</span>

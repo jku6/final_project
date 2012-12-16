@@ -1,5 +1,7 @@
 PortfolioFinalRails::Application.routes.draw do
   
+
+  resources :mycomments
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -12,7 +14,9 @@ PortfolioFinalRails::Application.routes.draw do
   match '/rate' => 'rater#create', :as => 'rate'
 
   resources :users
-  resources :companies 
+  resources :companies do
+    resources :comments,:votes,:ratings,:favorites
+  end
 
   resources :dashboard
   match '/maps' => 'companies#map', :via => :get
@@ -26,6 +30,7 @@ PortfolioFinalRails::Application.routes.draw do
   match '/maps' => 'companies#create', :via => :post
 
   mount Foundation::Icons::Rails::Engine => '/fi'
+  
   # map.resources :companies, :member => {:rate => :post}
 
   # The priority is based upon order of creation:

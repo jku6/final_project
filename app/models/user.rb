@@ -19,7 +19,13 @@
 class User < ActiveRecord::Base
   # has_secure_password
 
+  has_many :mycomments
+
   letsrate_rater
+
+  has_reputation
+  is_social
+  is_friendable
 
   # mount_uploader :photo, ImageUploader
   # validates :username, :presence => true

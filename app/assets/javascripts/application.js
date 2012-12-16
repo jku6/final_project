@@ -5,4 +5,5 @@
 //= require foundation
 //= require 'google.js'
 //= require 'letsrate.js.erb'
+//= require 'page.js'
 

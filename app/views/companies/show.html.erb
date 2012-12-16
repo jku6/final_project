@@ -1,20 +1,17 @@
+
+<div id="bodyContent">
+
 <h1>Company: <%= @company.name %></h1>
 
 Speed : <%= rating_for @company, "speed" %>
 Price : <%= rating_for @company, "price" %>
 
-<div class="fb-like" data-href="http://localhost:3000/" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
-
-<div class="fb-comments" data-href="http://localhost:3000/" data-width="470" data-num-posts="2"></div>
-
-
+Social
 
 <div id="self_canvas"></div>
 <script>
     display_map2(<%= @company.lat %>, <%= @company.long %>, 13);
 </script>
-
-
 
     <script>
         add_marker(<%= @company.lat %>, <%= @company.long %>, '<%= @company.name %>', '<%= @company.url %>', '<%= @company.address %>');
@@ -23,3 +20,7 @@ Price : <%= rating_for @company, "price" %>
 
 <%= link_to 'Edit', edit_company_path %>
 <%= link_to 'Back', companies_path %>
+
+
+</div>
+ 

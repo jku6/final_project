@@ -113,6 +113,7 @@ GEM
       sass
     fssm (0.2.9)
     geocoder (1.1.5)
+    haml (3.1.7)
     has_scope (0.5.1)
     hashie (1.2.0)
     hike (1.2.1)
@@ -207,8 +208,6 @@ GEM
       activesupport (= 3.2.9)
       bundler (~> 1.0)
       railties (= 3.2.9)
-    rails-footnotes (3.7.9)
-      rails (>= 3.0.0)
     railties (3.2.9)
       actionpack (= 3.2.9)
       activesupport (= 3.2.9)
@@ -231,6 +230,11 @@ GEM
     sassy-math (1.2)
       compass (~> 0.11)
     slop (3.3.3)
+    social_engine (0.0.1)
+      formtastic
+      haml
+      inherited_resources
+      yettings
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -248,6 +252,7 @@ GEM
     warden (1.2.1)
       rack (>= 1.0)
     xml-simple (1.1.2)
+    yettings (0.1.1)
     zurb-foundation (3.2.3)
       compass (>= 0.12.2)
       modular-scale (>= 1.0.2)
@@ -272,6 +277,7 @@ DEPENDENCIES
   fog
   foundation-icons-rails
   geocoder
+  haml
   httparty
   ipsum
   jquery-rails
@@ -281,8 +287,8 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 3.2.9)
-  rails-footnotes
   rmagick
   sass-rails (~> 3.2.3)
+  social_engine
   uglifier (>= 1.0.3)
   zurb-foundation
