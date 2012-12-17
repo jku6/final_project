@@ -7,3 +7,4 @@
 //= require 'letsrate.js.erb'
 //= require 'page.js'
 
+
