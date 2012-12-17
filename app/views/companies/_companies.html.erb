@@ -1,4 +1,8 @@
-<h1>Company Index List</h1>
+
+<% content_for :name, "home2" %>
+<div class="five columns">
+
+<h3>Company List</h3>
 
   <% @companies.each do |company| %>
     <div class="name">
@@ -22,3 +26,24 @@
     <%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Edit', edit_company_path(company) %>
 <% end %>
+
+</div>
+
+
+<div class="seven columns">
+
+
+<div id="map_canvas"></div>
+<% @companies.each do |x| %>
+<script>
+    display_map(<%= x.lat %>, <%= x.long %>, 13);
+</script>
+
+
+    <script>
+        add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.name %>', '<%= x.url %>', '<%= x.address %>');
+    </script>
+<% end %>
+
+</div>
+

@@ -1,8 +1,8 @@
-class DropTables < ActiveRecord::Migration
+class DropTable2 < ActiveRecord::Migration
   def change
     drop_table :active_admin_comments
     drop_table :admin_users
-    drop_table :comments
+   
     drop_table :favorites
     drop_table :friendings
     drop_table :reputation_actions

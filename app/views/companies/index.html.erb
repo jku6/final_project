@@ -1,46 +1,71 @@
+<% content_for :name, "home2" %>
+
 <div class="top"></div>
 
 
 <div id="bodyContent">
-
+<h3 class="searchp">Search by company name or address</h3>
 <%= render 'search2' %>
 <div class="allitems">
+<div class="five columns">
 
-<h1>Company Index List</h1>
+<h3 class="innersearch">Company List</h3>
+
 
   <% @companies.each do |company| %>
+<div class="listitem">
     <div class="name">
       <%= company.name %>
     </div>
-    
+    <br />
     <div class="category">
       <%= company.category %>
     </div>
-
+    <br />
     <div class="address">
       <%= company.address %>
     </div>
-
+    <br />
     <div class="url">
       <%= company.url %>
     </div>
-
-    
-    <div class="rating">
-    <%= company.rating_average %>
-    </div>
-
-    
-
-    
-
-
+    <br />
     <%= link_to 'Show', company %></td>
-    <%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Edit', edit_company_path(company) %>
+    <%#= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%#= link_to 'Edit', edit_company_path(company) %>
+</div>
 <% end %>
 
-<%= paginate @companies %>
+<div class="row"></div>
+
+<br />
+<div class="page">
+  <%= paginate @companies %>
+</div>
+
+</div>
+
+<div class="seven columns">
+
+  <div id="markers">
+
+
+
+<div id="map_canvas"></div>
+<script>
+    display_map(40.7142, -74.0064, 13);
+</script>
+
+
+
+<% @companies.each do |x| %>
+    <script>
+        add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.name %>', '<%= x.url %>', '<%= x.address %>');
+    </script>
+<% end %>
+</div>
+
+</div>
 
 </div>
 </div>

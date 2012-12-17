@@ -13,5 +13,6 @@
  *= require foundation_and_overrides
  *= require_tree .
  *= require 'main'
+ *= require 'dashboard'
  *= require foundation-icons
  */

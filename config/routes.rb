@@ -2,9 +2,8 @@ PortfolioFinalRails::Application.routes.draw do
   
 
   resources :mycomments
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  match '/comments' => 'mycomments#create', :via => :post
+  
 
   match 'auth/:provider/callback', to: 'session#create'
   match 'auth/failure', to: redirect('/')

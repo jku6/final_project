@@ -1,18 +1,56 @@
 
 <% if @auth %>
-  <div><h1>Welcome <%= @auth.username %></h1></div>
-  <div class="mainphoto"><%= image_tag @auth.photo %></div>
-  <%= @auth.email %>
+<% content_for :name, "home2" %>
 
-    <span class="glyph general">l</span>
-    <div>
-      <%= link_to "Edit your profile", edit_user_path(@auth) %>
+<div id="home-container"></div>
+  <div class="six columns centered" id="profile">
+    <div><h3 class="authname">Welcome <%= @auth.username %></h3></div>
+
+
+    <div class="mainphoto"><%= image_tag @auth.photo %></div>
+    <%= @auth.email %>
+
+      <span class="glyph enclosed">h</span>
+  </div>
+  <div class="row"></div>
+
+  <div class="six columns centered">
+    <div class="panel callout radius" id="frontright">
+      <h3>
+        <%= link_to "Search for companies", companies_path %><span class="glyph general" id="searchlarge">u</span>
+      </h3>
     </div>
+  </div>
+</div>
+
 
 
   
 <% else %> <!-- This is what happens if you are not logged in to a session -->
-  <div>Not logged in</div>
-  <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+
+<% content_for :name, "home" %>
+
+<div class="splash">
+<div id="home-container"></div>
+  <div class="six columns">
+    <h1 class="welcome">Welcome to<br /><span id="home-title">Biz-Shout!</span></h1>
+    <h2 class="welcome">The best place to discover and assess businesses</h2>
+  </div>
+  <div class="six columns">
+    <div class="panel" id="frontleft">
+      <h3><%= link_to "Login with ", "/auth/facebook", id: "sign_in" %><span class="glyph social" id="facelarge">d</span></h3>
+    </div>
+  </div>
+
+  <div class="six columns">
+    <div class="panel callout radius" id="frontright">
+      <h3>
+        <%= link_to "Search for companies  ", companies_path %><span class="glyph general" id="searchlarge">u</span>
+      </h3>
+    </div>
+  </div>
+</div>
+</div>
+
 
 <% end %>

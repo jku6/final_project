@@ -3,10 +3,34 @@
 
 <h1>Company: <%= @company.name %></h1>
 
-Speed : <%= rating_for @company, "speed" %>
-Price : <%= rating_for @company, "price" %>
+<% if @auth %>
+Customer Service: <%= rating_for @company, "customer_service" %>
+Performance: <%= rating_for @company, "performance" %>
+Speed: <%= rating_for @company, "speed" %>
+Price: <%= rating_for @company, "price" %>
 
-Social
+
+
+
+
+<%= form_tag '/comments' do %>
+<%= label_tag :text %>
+<%= text_field_tag :text %>
+<%= hidden_field_tag "company_id", @company.id %>
+<%= submit_tag "Confirm" %>
+<% end %>
+<% end %>
+
+
+<% @x.each do |comment| %>
+  <div class="text">
+    <%= comment.user.username %>:
+    <%= comment.text %>
+  </div>
+<% end %>
+<%= link_to 'Back', companies_path %>
+
+
 
 <div id="self_canvas"></div>
 <script>
@@ -18,9 +42,8 @@ Social
     </script>
 
 
-<%= link_to 'Edit', edit_company_path %>
-<%= link_to 'Back', companies_path %>
 
 
 </div>
+
  

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://ogp.me/ns#"
-      xmlns:fb="https://www.facebook.com/2008/fbml">
+<html lang="en">
 <head>
   <title>Biz-Shout</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
 
+  <!--css-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Yesteryear|Fugaz+One|Racing+Sans+One|Bangers|Satisfy|Baumans' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{GOOGLEKEY}&sensor=false" %>
 
   
@@ -14,6 +15,7 @@
 
 </head>
 <body class="<%= yield(:name) if yield %>">
+
   <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -23,32 +25,26 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+  
 <div id="container">
-
-    <header>
-      
-    </header>
-
-    <nav class="top-bar">
+    <nav class="top-bar" id="bar">
       <ul>
         <li class="name"><h1><a href="/">Biz-Shout</a></h1></li>
+
         <li class="toggle-topbar"><a href="#"></a></li>
       </ul>
         <section>
           <ul class="left">
-
-            
-            
             <li class="has-dropdown">
               <a href="/companies">Companies</a>
 
                 <ul class="dropdown">
-                  <li><a href="#">Dropdown Link</a></li>
+                  <li><a href="/maps">Map</a></li>
                 </ul>
-
             </li>
-            <li><%= link_to "Map", maps_path %></li>
             
+          </ul>
+          <ul class="right">
             <% if @auth %>
             <li>Signed in as <strong><%= @auth.username %></strong>!</li>
             <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
@@ -59,20 +55,25 @@
           
             
           </ul>
-
-          
-
-          
         </section>
     </nav>
 
+
+
     <%= yield %>
     
-    <footer>
-
-    </footer>
+    <!-- <footer>
+      
+      
+      <div class="clear">
+      </div>
+      
+      <p>Copyright &copy; Biz-Shout Inc 2012</p>
+    
+    </footer> -->
 
   </div><!-- end container -->
+
 <%= javascript_include_tag "alertify.js" %>
 </body>
 </html>

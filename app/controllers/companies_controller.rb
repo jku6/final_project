@@ -71,6 +71,14 @@ class CompaniesController < ApplicationController
 
     def show
       @company = Company.find(params[:id])
+      
+      @x = Mycomment.where(:company_id => params[:id])
+      commentnum = @x.length
+      commentnum.times do |a|
+      @y = User.find(@x[a]['user_id'])
+      
+      end
+      
     end
 
 

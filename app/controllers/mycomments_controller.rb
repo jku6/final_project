@@ -7,10 +7,13 @@ class MycommentsController < ApplicationController
   def create
     @mycomment = Mycomment.create(params[:mycomment])
     @mycomment.user_id = @auth.id
-    binding.pry
+    @mycomment.text = params["text"]
+    @mycomment.company_id = params["company_id"]
+    @mycomment.save
+   
 
     if @mycomment.save
-      redirect_to root_path
+      redirect_to company_path(params[:company_id])
     else
       render :new
     end

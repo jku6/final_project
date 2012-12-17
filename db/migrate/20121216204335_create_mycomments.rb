@@ -4,7 +4,6 @@ class CreateMycomments < ActiveRecord::Migration
       t.integer :user_id
       t.string :text
       t.integer :company_id
-
       t.timestamps
     end
   end
