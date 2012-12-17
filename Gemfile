@@ -20,7 +20,7 @@ gem 'geocoder'
 gem 'httparty'
 gem 'letsrate'
 gem 'awesome_nested_set'
-gem 'acts_as_commentable_with_threading'
+
 gem 'omniauth-facebook'
 gem 'activeadmin'
 gem 'foundation-icons-rails'

@@ -40,10 +40,6 @@ GEM
     activesupport (3.2.9)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    acts_as_commentable_with_threading (1.1.2)
-      activerecord (>= 3.0)
-      activesupport (~> 3.0)
-      awesome_nested_set (>= 2.0)
     annotate (2.5.0)
       rake
     arbre (1.0.1)
@@ -271,7 +267,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  acts_as_commentable_with_threading
   annotate
   awesome_nested_set
   aws-ses

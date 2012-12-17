@@ -14,6 +14,7 @@
 #  oauth_token      :string(255)
 #  provider         :string(255)
 #  uid              :string(255)
+#  reputation       :integer
 #
 
 class User < ActiveRecord::Base
