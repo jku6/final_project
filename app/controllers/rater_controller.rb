@@ -13,6 +13,7 @@ class RaterController < ApplicationController
     else
       render :json => false        
     end
+    
   end          
 
   # private

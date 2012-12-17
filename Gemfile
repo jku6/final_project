@@ -26,6 +26,7 @@ gem 'activeadmin'
 gem 'foundation-icons-rails'
 gem 'social_engine'
 gem 'haml'
+gem 'omniauth-twitter'
 # gem 'rake', '10.0.2'
 group :development do
   gem 'better_errors'

@@ -70,8 +70,15 @@ class CompaniesController < ApplicationController
 
 
     def show
+
       @company = Company.find(params[:id])
-      
+      # @user = User.find(params[:id])
+
+      # @rate = Rate.all
+
+      # @r = Rate.where(:rateable_id => @company.id, :dimension => "overall_satisfaction")
+      # @value = @r.first.stars
+
       @x = Mycomment.where(:company_id => params[:id])
       commentnum = @x.length
       commentnum.times do |a|

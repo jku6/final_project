@@ -8,9 +8,11 @@
 
 
     <div class="mainphoto"><%= image_tag @auth.photo %></div>
-    <%= @auth.email %>
-
+    <% if @auth.provider == 'facebook' %>
+      <%= @auth.email %>
       <span class="glyph enclosed">h</span>
+    <% end %>
+
   </div>
   <div class="row"></div>
 
@@ -39,6 +41,7 @@
   <div class="six columns">
     <div class="panel" id="frontleft">
       <h3><%= link_to "Login with ", "/auth/facebook", id: "sign_in" %><span class="glyph social" id="facelarge">d</span></h3>
+      <h3><%= link_to "Login with ", "/auth/twitter", id: "sign_in" %><span class="glyph social" id="facelarge">e</span></h3>
     </div>
   </div>
 

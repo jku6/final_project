@@ -18,7 +18,7 @@
 
 class Company < ActiveRecord::Base
   attr_accessible :name, :lat, :long, :address, :address2, :category, :url, :hiring
-  letsrate_rateable "speed", "performance", "price", "customer_service"
+  letsrate_rateable "overall_satisfaction", "satisfaction_with_staff_resources", "quality_of_work", "fulfillment_of_project_objectives", "adherence_to_project_deadlines", "responsiveness_to_requests_questions", "price_value"
 
   has_many :mycomments
   
