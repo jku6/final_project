@@ -22,9 +22,8 @@ ActiveRecord::Schema.define(:version => 20121213220756015) do
     t.string   "category"
     t.string   "url"
     t.boolean  "hiring"
-    t.datetime "created_at",                                                    :null => false
-    t.datetime "updated_at",                                                    :null => false
-    t.decimal  "rating_average", :precision => 6, :scale => 2, :default => 0.0
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "mycomments", :force => true do |t|
@@ -60,20 +59,6 @@ ActiveRecord::Schema.define(:version => 20121213220756015) do
 
   add_index "rating_caches", ["cacheable_id", "cacheable_type"], :name => "index_rating_caches_on_cacheable_id_and_cacheable_type"
 
-  create_table "ratings", :force => true do |t|
-    t.string   "rateable_type"
-    t.integer  "rateable_id"
-    t.integer  "value"
-    t.integer  "user_id"
-    t.string   "ip_address"
-    t.string   "session_hash"
-    t.string   "browser_fingerprint"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  add_index "ratings", ["rateable_type", "rateable_id", "ip_address", "browser_fingerprint"], :name => "ratings_index"
-
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "password_digest"
@@ -86,7 +71,6 @@ ActiveRecord::Schema.define(:version => 20121213220756015) do
     t.string   "oauth_token"
     t.string   "provider"
     t.string   "uid"
-    t.integer  "reputation"
   end
 
 end
