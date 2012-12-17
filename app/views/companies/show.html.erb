@@ -59,19 +59,18 @@
 </div>
 </div>
 
-
+<% if @auth %>
 <div class="row" id="comment_section">
   <div class="six columns centered">
     <div class="commentbox">
       <h3>What do you think of <%= @company.name %>?</h3>
-      <% if @auth %>
+
         <%= form_tag '/comments' do %>
         
         <%= text_field_tag :text %>
         <%= hidden_field_tag "company_id", @company.id %>
         <%= submit_tag "Confirm" %>
         <% end %>
-      <% end %>
     </div>
 
 
@@ -88,8 +87,7 @@
 
   </div>
 </div>
-
-
+<% end %>
 
 </div>
 
