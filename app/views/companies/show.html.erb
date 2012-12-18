@@ -29,21 +29,22 @@
     Price/Value: <%= rating_for @company, "price_value" %>
   </div>
   <% end %>
-
-  <div class="url">
-    <a href='<%= @company.url %>' target="_blank"><%= @company.name %></a>
-  </div>
-  <br />
-  <div class="address">
-    <%= @company.address %>, <%= @company.address2 %>
-  </div>
-  <br />
-  <div class="category">
-    <%= @company.category %>
-  </div>
-  <br />
-  <div class="hiring">
-    Are they hiring: <%= @company.hiring %>
+  <div class="info">
+    <div class="url">
+      Link: <a href='<%= @company.url %>' target="_blank"><%= @company.name %></a>
+    </div>
+    <br />
+    <div class="address">
+      Address: <%= @company.address %>, <%= @company.address2 %>
+    </div>
+    <br />
+    <div class="category">
+      <%= @company.category %>
+    </div>
+    <br />
+    <div class="hiring">
+      Are they hiring: <%= @company.hiring %>
+    </div>
   </div>
 </div>
 
@@ -65,25 +66,27 @@
     <div class="commentbox">
       <h3>What do you think of <%= @company.name %>?</h3>
 
-        <%= form_tag '/comments' do %>
+        <%= form_tag '/comments', :remote => true do %>
         
         <%= text_field_tag :text %>
         <%= hidden_field_tag "company_id", @company.id %>
-        <%= submit_tag "Confirm" %>
+        <%= submit_tag "Confirm", :id => "b3" %>
+        
         <% end %>
     </div>
 
 
-
+  <div class="commentlist">
     <% @x.each do |comment| %>
+    
       <div class="text">
-
         <h3><%= comment.user.username %></h3>
         <div class="textbox"><%= comment.text %></div>
       </div>
     <% end %>
      <br />
     <%= link_to 'Back', companies_path %>
+  </div>
 
   </div>
 </div>

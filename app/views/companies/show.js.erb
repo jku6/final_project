@@ -1,0 +1,3 @@
+$('.commentlist').empty();
+
+$('.commentlist').append("<%=j render :partial => 'show', :locals => {:companies => @companies} %>");

@@ -1,37 +1,37 @@
 
 <div class="five columns">
-
-<h3>Company List</h3>
+<h3 class="innersearch">Company List</h3>
 
   <% @companies.each do |company| %>
+  <div class="listitem">
     <div class="name">
       <%= company.name %>
     </div>
-    
+    <br />
     <div class="category">
       <%= company.category %>
     </div>
-
+    <br />
     <div class="address">
       <%= company.address %>
     </div>
-
+    <br />
     <div class="url">
       <%= company.url %>
     </div>
-
-
+    <br />
     <%= link_to 'Show', company %></td>
-    <%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Edit', edit_company_path(company) %>
+  </div>
 <% end %>
+<div class="row"></div>
+<br />
 
 </div>
 
 
 <div class="seven columns">
 
-
+<div id="markers">
 <div id="map_canvas"></div>
 <% @companies.each do |x| %>
 <script>
@@ -43,6 +43,6 @@
         add_marker(<%= x.lat %>, <%= x.long %>, '<%= x.name %>', '<%= x.url %>', '<%= x.address %>');
     </script>
 <% end %>
-
+</div>
 </div>
 

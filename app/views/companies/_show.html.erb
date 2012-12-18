@@ -1,0 +1,8 @@
+<% @x.each do |comment| %>
+      <div class="text">
+        <h3><%= comment.user.username %></h3>
+        <div class="textbox"><%= comment.text %></div>
+      </div>
+    <% end %>
+     <br />
+  <%= link_to 'Back', companies_path %>

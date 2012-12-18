@@ -16,4 +16,6 @@
  *= require 'dashboard'
  *= require foundation-icons
  *= require 'show'
+ *= require 'jquery-ui-1.9.2.custom.css'
+ *= require 'alertify.css'
  */
