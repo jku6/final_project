@@ -68,7 +68,6 @@ class CompaniesController < ApplicationController
 
 
     def show
-
       @company = Company.find(params[:id])
       # @user = User.find(params[:id])
 
@@ -78,6 +77,7 @@ class CompaniesController < ApplicationController
       # @value = @r.first.stars
 
       @x = Mycomment.where(:company_id => params[:id])
+      @pager = @x.page(params[:page])
       commentnum = @x.length
       commentnum.times do |a|
       @y = User.find(@x[a]['user_id'])
