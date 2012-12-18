@@ -1,5 +1,6 @@
 PortfolioFinalRails::Application.routes.draw do
   
+  get 'companies/autocomplete_company_name'
 
   resources :mycomments
   match '/comments' => 'mycomments#create', :via => :post

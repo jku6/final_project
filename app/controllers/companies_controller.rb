@@ -1,10 +1,7 @@
 class CompaniesController < ApplicationController
-
+    autocomplete :company, :name
     def index
       @companies = Company.page(params[:page])
-      
-      
-      
     end
 
     def map
