@@ -10,9 +10,6 @@
   <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{GOOGLEKEY}&sensor=false" %>
-
-  <%= javascript_include_tag 'jquery-ui-1.9.2.custom.js', 'jquery-ui-1.9.2.custom.min.js', 'autocomplete-rails.js' %>
-  <%= stylesheet_link_tag 'jquery-ui-1.9.2.custom.css' %>
   
   <%= csrf_meta_tags %>
 
@@ -35,7 +32,7 @@
         <% if @auth %>
         <li class="name"><h1><a href="/companies">Biz-Shout</a></h1></li>
         <% else %>
-        <li class="name"><h1><a href="#">Biz-Shout</a></h1></li>
+        <li class="name"><h1><a href="/">Biz-Shout</a></h1></li>
         <% end %>
         <li class="toggle-topbar"><a href="#"></a></li>
       </ul>
@@ -80,7 +77,6 @@
     </footer> -->
 
   </div><!-- end container -->
-
 <%= javascript_include_tag "alertify.js" %>
 </body>
 </html>

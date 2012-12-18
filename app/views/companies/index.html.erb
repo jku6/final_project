@@ -4,6 +4,7 @@
 
 
 <div id="bodyContent">
+<% if @auth %>
   <div class="six columns centered" id="profile2">
     <div class="mainphoto"><%= image_tag @auth.photo %></div>
     <% if @auth.provider == 'facebook' %>
@@ -14,6 +15,7 @@
   </div>
 
 <div class="barrier"></div>
+<% end %>
 
 
 <%= render 'search2' %>
