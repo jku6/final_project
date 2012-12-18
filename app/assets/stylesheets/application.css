@@ -13,7 +13,7 @@
  *= require foundation_and_overrides
  *= require_tree .
  *= require 'main'
- *= require 'dashboard'
+ *= require 'index'
  *= require foundation-icons
  *= require 'show'
  *= require 'jquery-ui-1.9.2.custom.css'

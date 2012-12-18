@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Yesteryear|Fugaz+One|Racing+Sans+One|Bangers|Satisfy|Baumans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{GOOGLEKEY}&sensor=false" %>
 
@@ -31,8 +32,11 @@
 <div id="container">
     <nav class="top-bar" id="bar">
       <ul>
-        <li class="name"><h1><a href="/">Biz-Shout</a></h1></li>
-
+        <% if @auth %>
+        <li class="name"><h1><a href="/companies">Biz-Shout</a></h1></li>
+        <% else %>
+        <li class="name"><h1><a href="#">Biz-Shout</a></h1></li>
+        <% end %>
         <li class="toggle-topbar"><a href="#"></a></li>
       </ul>
         <section>

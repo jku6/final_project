@@ -23,6 +23,23 @@ function display_map(lat, long, zoom)
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
 }
+function display_map3(lat, long, zoom)
+{
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
+  var mapOptions = {
+    center: new google.maps.LatLng(lat, long),
+    zoom: zoom,
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
+  };
+
+  canvas = $('#map_canvas2')[0];
+  map = new google.maps.Map(canvas, mapOptions);
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
+}
 function display_map2(lat, long, zoom)
 {
   var styledMap = new google.maps.StyledMapType(styles,

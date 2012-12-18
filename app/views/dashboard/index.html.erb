@@ -1,59 +1,27 @@
 
-<% if @auth %>
-<% content_for :name, "home2" %>
-
-<div id="home-container"></div>
-  <div class="six columns centered" id="profile">
-    <div><h3 class="authname">Welcome <%= @auth.username %></h3></div>
 
 
-    <div class="mainphoto"><%= image_tag @auth.photo %></div>
-    <% if @auth.provider == 'facebook' %>
-      <%= @auth.email %>
-      <span class="glyph enclosed">h</span>
-    <% end %>
-
-  </div>
-  <div class="row"></div>
-
-  <div class="six columns centered">
-    <div class="panel callout radius" id="frontright">
-      <h3>
-        <%= link_to "Search for companies", companies_path %><span class="glyph general" id="searchlarge">u</span>
-      </h3>
-    </div>
-  </div>
-</div>
-
-
-
-  
-<% else %> <!-- This is what happens if you are not logged in to a session -->
 
 <% content_for :name, "home" %>
 
 <div class="splash">
 <div id="home-container"></div>
-  <div class="six columns">
+  <div class="biz six columns">
     <h1 class="welcome">Welcome to<br /><span id="home-title">Biz-Shout!</span></h1>
     <h1 class="welcome">The best place to discover and assess businesses</h1>
   </div>
   <div class="six columns">
-    <div class="panel" id="frontleft">
-      <h3 class="borderf"><%= link_to "Login with ", "/auth/facebook", id: "sign_in" %><span class="glyph social" id="facelarge">d</span></h3>
-      <h3 class="bordert"><%= link_to "Login with ", "/auth/twitter", id: "sign_in" %><span class="glyph social" id="facelarge">e</span></h3>
-    </div>
+
+    <h3 class="bordert"><a class="tweet radius button" href="/auth/facebook">Login with <span class="glyph social" id="facelarge">d</span></a></h3>
+    <h3 class="bordert"><a class="tweet radius button" href="/auth/twitter">Login with <span class="glyph social" id="facelarge">e</span></a></h3>
   </div>
 
   <div class="six columns">
-    <div class="panel callout radius" id="frontright">
-      <h3>
-        <%= link_to "Search for companies ", companies_path %><span class="glyph general" id="searchlarge">u</span>
-      </h3>
+
+      <h3 class="bordert"><a class="searching radius button" href="/auth/twitter">Search for companies <span class="glyph general" id="searchlarge">u</span></a></h3>
     </div>
   </div>
 </div>
 </div>
 
 
-<% end %>

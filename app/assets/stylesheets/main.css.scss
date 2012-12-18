@@ -24,13 +24,21 @@
   width: 960px;
   margin: auto;
   min-height: 900px;
-  box-shadow: 0px 0px 10px black;
+  
 }
 
 #map_canvas
  {
     width: 520px;
-    height: 520px;
+    height: 650px;
+    position:absolute;
+    box-shadow: 0px 0px 7px black;
+    padding-right: 10px;
+ }
+ #map_canvas2
+ {
+    width: 960px;
+    height: 550px;
     position:absolute;
     box-shadow: 0px 0px 7px black;
     padding-right: 10px;
@@ -66,6 +74,7 @@
  .mainphoto img {
   height: 70px;
   width: 70px;
+  box-shadow: 0px 0px 7px black;
  }
 
 #bodyContent {
@@ -110,11 +119,11 @@ body.home {
 
 }
 #bar a.toolbar{
-  color: #4d00e0;
+  color: #DADADA;
   font-weight: bold;
 }
 #bar li.toolbar a{
-  color: #4d00e0;
+  color: #DADADA;
   font-weight: bold;
 }
 #bar h1 {
@@ -145,6 +154,7 @@ body.home {
   box-shadow: 1px 1px 5px black;
   text-align: center;
   background-color: #DADADA;
+  margin-top: 22px;
 
 }
 #frontleft a {
@@ -167,10 +177,14 @@ body.home {
   text-shadow: 3px 3px 10px black; 
   color: white;
   margin-bottom: 10px;
-  margin-top: 20px;
+  margin-top: none;
   text-align: center;
-
 }
+.biz h1.welcome {
+  margin-top: none;
+}
+
+
 
 #home-container {
   margin-top: 130px;
@@ -208,6 +222,41 @@ footer {
     margin-top: 5px;
   }
 }
+
+
+.tweet {
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
+  text-align: center;
+  background-color: #DADADA;
+  margin-top: 22px;
+  border: none;
+  color: #290066;
+  width: 450px;
+  font-size: 30px;
+}
+.tweet:hover, .tweet:focus {
+  color: #290066;
+  background-color: #b7b7b7;
+}
+
+.searching {
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
+  text-align: center;
+  background-color: #290066;
+  margin-top: 22px;
+  border: none;
+  color: white;
+  width: 450px;
+  font-size: 30px;
+}
+.searching:hover, .searching:focus {
+  color: white;
+  background-color: #0f0028;
+}
+
+
 
 
 

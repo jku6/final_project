@@ -4,49 +4,21 @@
 
 
 <div id="bodyContent">
-<h3 class="searchp">Search by company name or address</h3>
+  <div class="six columns centered" id="profile2">
+    <div class="mainphoto"><%= image_tag @auth.photo %></div>
+    <% if @auth.provider == 'facebook' %>
+      <%= @auth.email %>
+      <span class="glyph enclosed">h</span>
+    <% end %>
+    <h3 class="authname">Welcome <%= @auth.username %></h3>
+  </div>
+
+<div class="barrier"></div>
+
+
 <%= render 'search2' %>
 <div class="allitems">
-<div class="five columns">
-
-<h3 class="innersearch">Company List</h3>
-
-
-  <% @companies.each do |company| %>
-<div class="listitem">
-    <div class="name">
-      <%= company.name %>
-    </div>
-    <br />
-    <div class="category">
-      <%= company.category %>
-    </div>
-    <br />
-    <div class="address">
-      <%= company.address %>
-    </div>
-    <br />
-    <div class="url">
-      <%= company.url %>
-    </div>
-    <br />
-    <%= link_to 'Show', company %></td>
-    <%#= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%#= link_to 'Edit', edit_company_path(company) %>
-</div>
-<% end %>
-
-<div class="row"></div>
-
-<br />
-<div class="page">
-  <%= paginate @companies %>
-</div>
-</div>
-
-
-
-<div class="seven columns">
+  <div class="seven columns">
 
   <div id="markers">
 
@@ -67,6 +39,40 @@
 </div>
 
 </div>
+<div class="four columns">
+
+<h3 class="innersearch">Company List</h3>
+
+
+  <% @companies.each do |company| %>
+<div class="listitem">
+    <div class="comname">
+      <%= link_to company.name, company %></td>
+    </div>
+    <br />
+    <div class="address">
+      <%= company.address %>
+    </div>
+    <br />
+    <div class="url">
+      <%= link_to "Company Website", company.url %>
+    </div>
+    <br />
+    <%#= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%#= link_to 'Edit', edit_company_path(company) %>
+</div>
+<% end %>
+
+<div class="row"></div>
+
+<br />
+<div class="page">
+  <%= paginate @companies %>
+</div>
+</div>
+
+
+
 
 </div>
 </div>
