@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
-    autocomplete :company, :name
+    autocomplete :company, :name, :full => true
+
     def index
       @companies = Company.page(params[:page])
     end

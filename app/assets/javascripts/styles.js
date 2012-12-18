@@ -17,5 +17,16 @@ var styles = [
       stylers: [
         { visibility: "on" }
       ]
-    }
+    },{
+    featureType: "water",
+    elementType: "geometry.fill",
+    stylers: [
+      { weight: 0.1 },
+      { visibility: "on" },
+      { color: "#1c0aff" },
+      { lightness: 30 }
+    ]
+  },
   ];
+
+  

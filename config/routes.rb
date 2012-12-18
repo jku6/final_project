@@ -1,6 +1,6 @@
 PortfolioFinalRails::Application.routes.draw do
   
-  get '/companies/autocomplete_company_name'
+  # get '/companies/autocomplete_company_name'
 
   resources :mycomments
   match '/comments' => 'mycomments#create', :via => :post
@@ -16,6 +16,7 @@ PortfolioFinalRails::Application.routes.draw do
   resources :users
   resources :companies do
     resources :comments,:votes,:ratings,:favorites
+    get :autocomplete_company_name, :on => :collection
   end
 
   resources :dashboard

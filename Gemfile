@@ -28,7 +28,7 @@ gem 'social_engine'
 gem 'haml'
 gem 'omniauth-twitter'
 gem 'rails3-jquery-autocomplete'
-gem 'nifty-generators'
+
 # gem 'rake', '10.0.2'
 group :development do
   gem 'better_errors'

@@ -23,7 +23,8 @@
 #container {
   width: 960px;
   margin: auto;
-
+  min-height: 900px;
+  box-shadow: 0px 0px 10px black;
 }
 
 #map_canvas
