@@ -8,17 +8,25 @@ $(function(){
 
 function display_map(lat, long, zoom)
 {
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
   var mapOptions = {
     center: new google.maps.LatLng(lat, long),
     zoom: zoom,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
   };
 
   canvas = $('#map_canvas')[0];
   map = new google.maps.Map(canvas, mapOptions);
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
 }
 function display_map2(lat, long, zoom)
 {
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "Styled Map"});
   var mapOptions = {
     center: new google.maps.LatLng(lat, long),
     zoom: zoom,
@@ -27,6 +35,8 @@ function display_map2(lat, long, zoom)
 
   canvas = $('#self_canvas')[0];
   map = new google.maps.Map(canvas, mapOptions);
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
 }
 
 infos = [];

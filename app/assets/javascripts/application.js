@@ -10,4 +10,5 @@
 //= require 'page.js'
 //= require jquery-ui
 //= require autocomplete-rails
+//= require 'styles.js'
 
