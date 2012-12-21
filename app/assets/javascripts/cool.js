@@ -7,8 +7,12 @@ $(function(){
 
 function b1()
 {
-    alertify.confirm( "Sign in with Twitter or Facebook", function () {
-        $('h1').text('we rule and you suck!');
+    alertify.confirm( "Are you sure you want to signout?", function(e) {
+    if (e) {
+        
+    } else {
+    
+    }
     });
 }
 

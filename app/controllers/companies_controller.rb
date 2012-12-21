@@ -8,8 +8,7 @@ class CompaniesController < ApplicationController
     def map
       @companies = Company.all
     end
-
-    
+  
     def create
 
       #   # This is the added code
@@ -23,7 +22,6 @@ class CompaniesController < ApplicationController
         y = HTTParty.get('http://data.cityofnewyork.us/api/views/f4yq-wry5/rows.json')
         z = y["data"].length
         
-
         z.times do |a|
           @address = y["data"][a][9]
           #place = Geocoder.search(@address + " New York, NY")
@@ -35,8 +33,6 @@ class CompaniesController < ApplicationController
           @url = y["data"][a][13][0]
           @hiring = y["data"][a][14]
           
-
-
           @company = Company.create(name: @name, address: @address, address2: @address2, category: @category, url: @url, hiring: @hiring)
 
         end
@@ -65,8 +61,6 @@ class CompaniesController < ApplicationController
       end
     end
 
-
-
     def show
       @company = Company.find(params[:id])
       # @user = User.find(params[:id])
@@ -80,13 +74,7 @@ class CompaniesController < ApplicationController
       @pager = @x.page(params[:page])
       commentnum = @x.length
       commentnum.times do |a|
-      @y = User.find(@x[a]['user_id'])
-      
-      end
-      
+      @y = User.find(@x[a]['user_id']) 
+      end    
     end
-
-
-
-
 end
