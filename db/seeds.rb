@@ -5,8 +5,8 @@
 #         address = y["data"][a][9]
 #             #place = Geocoder.search(@address + " New York, NY")
 #         name = y["data"][a][8]
-#            # @lat = place[0].data["geometry"]["location"]["lat"]
-#            # @long = place[0].data["geometry"]["location"]["lng"]
+#         @lat = place[0].data["geometry"]["location"]["lat"]
+#         @long = place[0].data["geometry"]["location"]["lng"]
 #         address2 = y["data"][a][10]
 #         category = y["data"][a][12]
 #         url = y["data"][a][13][0]
